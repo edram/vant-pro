@@ -15,8 +15,12 @@ hero:
       link: https://github.com/edram/vant-pro
 
 features:
-  - title: Vant
+  - icon:
+      src: /logo.png
+    title: Vant
     details: 基于 Vant 开发的额外组件
-  - title: 样式
-    details: 基于 Vant 的样式系统
+  - icon:
+      src: /less-logo.png
+    title: 样式
+    details: 基于 Less 的样式系统
 ---

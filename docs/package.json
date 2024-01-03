@@ -12,5 +12,8 @@
   },
   "peerDependencies": {
     "vue": "^3.4.3"
+  },
+  "dependencies": {
+    "@vant/assets": "^1.0.8"
   }
 }

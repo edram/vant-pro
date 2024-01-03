@@ -23,6 +23,9 @@ importers:
 
   docs:
     dependencies:
+      '@vant/assets':
+        specifier: ^1.0.8
+        version: 1.0.8
       vue:
         specifier: ^3.4.3
         version: 3.4.3
@@ -690,6 +693,10 @@ packages:
   /@types/web-bluetooth@0.0.20:
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
     dev: true
+
+  /@vant/assets@1.0.8:
+    resolution: {integrity: sha512-+tH6o83fNqXQWRjGTVxBYdz6a62U9dk1R2WH6huFRK+Wl96ssGPvz9DYU/w/4DZ7lneM6k7u71gzJ2R74yu1Ig==}
+    dev: false
 
   /@vitejs/plugin-vue@5.0.2(vite@5.0.10)(vue@3.4.3):
     resolution: {integrity: sha512-kEjJHrLb5ePBvjD0SPZwJlw1QTRcjjCA9sB5VyfonoXVBxTS7TMnqL6EkLt1Eu61RDeiuZ/WN9Hf6PxXhPI2uA==}
