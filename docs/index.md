@@ -3,23 +3,20 @@
 layout: home
 
 hero:
-  name: "Vant-Pro"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: 'Vant Pro'
+  text: '基于 Vant 的业务组件'
+  tagline: 轻量、可定制的移动端 Vue 组件库
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 组件列表
+      link: /components/sku
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Github
+      link: https://github.com/edram/vant-pro
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Vant
+    details: 基于 Vant 开发的额外组件
+  - title: 样式
+    details: 基于 Vant 的样式系统
 ---
-
