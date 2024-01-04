@@ -1,6 +1,7 @@
 import terser from '@rollup/plugin-terser';
 import { babel } from '@rollup/plugin-babel';
-
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 /** @type {import("rollup").RollupOptions} */
 const config = {
@@ -13,6 +14,7 @@ const config = {
       plugins: [],
       globals: {
         vue: 'vue',
+        vant: 'vant',
       },
     },
     {
@@ -22,6 +24,7 @@ const config = {
       plugins: [terser()],
       globals: {
         vue: 'vue',
+        vant: 'vant',
       },
     },
   ],
@@ -31,9 +34,13 @@ const config = {
       babelHelpers: 'inline',
       extensions: ['.js', '.jsx', '.tsx', '.ts'],
     }),
+    commonjs(),
+    resolve({
+      extensions: ['.ts', '.tsx', '.js', '.mjs'],
+    }),
   ],
 
-  external: ['vue'],
+  external: ['vue', 'vant'],
 };
 
 export default config;

@@ -5,15 +5,22 @@
   "keywords": [],
   "license": "ISC",
   "author": "",
+  "sideEffects": false,
   "main": "index.js",
   "scripts": {
     "build": "pnpm clean && rollup -c",
     "clean": "rimraf dist"
   },
+  "dependencies": {
+    "tiny-emitter": "^2.1.0",
+    "vant": "^3.6.12"
+  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@edram/tsconfig": "^0.0.7",
     "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@vue/babel-plugin-jsx": "^1.1.5",
     "rimraf": "^5.0.5",
