@@ -27,6 +27,12 @@ const config = {
         vant: 'vant',
       },
     },
+    {
+      name: 'vant-pro',
+      file: 'dist/vant-pro.es.js',
+      format: 'es',
+      plugins: [],
+    },
   ],
 
   plugins: [

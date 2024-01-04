@@ -10,6 +10,8 @@ The main `useData()` API can be used to access site, theme, and page data for th
 
 <script setup>
 import { useData } from 'vitepress'
+import SkuActions from '@edram/vant-pro'
+console.log(SkuActions)
 
 const { site, theme, page, frontmatter } = useData()
 </script>
@@ -18,15 +20,7 @@ const { site, theme, page, frontmatter } = useData()
 
 ### Theme Data
 
-<pre>{{ theme }}</pre>
-
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
+<SkuActions />
 
 ## More
 

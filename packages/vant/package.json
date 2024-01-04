@@ -1,12 +1,12 @@
 {
-  "name": "vant",
+  "name": "@edram/vant-pro",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
   "author": "",
   "sideEffects": false,
-  "main": "index.js",
+  "main": "dist/vant-pro.es.js",
   "scripts": {
     "build": "pnpm clean && rollup -c",
     "clean": "rimraf dist"

@@ -23,6 +23,9 @@ importers:
 
   docs:
     dependencies:
+      '@edram/vant-pro':
+        specifier: workspace:^
+        version: link:../packages/vant
       '@vant/assets':
         specifier: ^1.0.8
         version: 1.0.8
