@@ -7,7 +7,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:build": "pnpm --dir docs docs:build",
     "prepare": "husky install"
   },
   "prettier": "@edram/prettier",
