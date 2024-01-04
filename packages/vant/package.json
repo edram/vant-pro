@@ -15,10 +15,10 @@
     "@edram/tsconfig": "^0.0.7",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/react": "^18.2.46",
     "@vue/babel-plugin-jsx": "^1.1.5",
     "rimraf": "^5.0.5",
     "rollup": "^4.9.2",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "vue": "^3.4.4"
   }
 }
