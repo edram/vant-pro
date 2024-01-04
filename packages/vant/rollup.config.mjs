@@ -1,4 +1,5 @@
 import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 /** @type {import("rollup").RollupOptions} */
 const config = {
@@ -17,6 +18,10 @@ const config = {
       plugins: [terser()],
     },
   ],
+
+  plugins: [typescript({
+    tsconfig: 'tsconfig.rollup.json'
+  })]
 };
 
 export default config;
