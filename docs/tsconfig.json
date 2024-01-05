@@ -1,0 +1,10 @@
+{
+  "extends": "@edram/tsconfig",
+  "compilerOptions": {
+    "rootDir": "./",
+    "jsxImportSource": "vue",
+    "allowJs": true
+  },
+  "include": ["./.vitepress/**/*"],
+  "exclude": ["dist", "node_modules", "./.vitepress/cache"]
+}
