@@ -2,7 +2,9 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import vant from 'vant';
 import './style.css'
+import 'vant/lib/index.css';
 
 export default {
   extends: DefaultTheme,
@@ -13,5 +15,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
+    app.use(vant);
   }
 } satisfies Theme

@@ -4,10 +4,10 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 
 export default defineConfig({
   plugins: [
-    Components({
-      dts: '.vitepress/components.d.ts',
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.ts$/],
-      resolvers: [VantResolver()],
-    }),
+    // Components({
+    //   dts: '.vitepress/components.d.ts',
+    //   include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.ts$/],
+    //   resolvers: [VantResolver()],
+    // }),
   ],
 });
