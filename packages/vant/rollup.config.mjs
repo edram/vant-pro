@@ -2,6 +2,7 @@ import terser from '@rollup/plugin-terser';
 import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import postcss from 'rollup-plugin-postcss';
 
 /** @type {import("rollup").RollupOptions} */
 const config = {
@@ -49,4 +50,17 @@ const config = {
   external: ['vue', 'vant'],
 };
 
-export default config;
+/** @type {import("rollup").RollupOptions} */
+const less = {
+  input: 'src/index.less',
+  output: [
+    {
+      name: 'vant-pro',
+      file: 'dist/vant-pro.css',
+    },
+  ],
+
+  plugins: [postcss({ extract: true })],
+};
+
+export default [config, less];
