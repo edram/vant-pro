@@ -26,7 +26,7 @@
 <script>
 /* eslint-disable no-unused-vars */
 import { initialSku, getSkuData } from './data';
-import Sku from '@edram/vant-pro';
+import { Sku } from '@edram/vant-pro';
 
 export default {
   components: {

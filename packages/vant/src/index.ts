@@ -1,3 +1,1 @@
-import Sku from './sku';
-
-export default Sku
+export { default as Sku } from './sku';
