@@ -9,7 +9,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "docs:build": "pnpm --dir docs docs:build",
+    "docs:build": "turbo docs:build --filter=docs...",
     "prepare": "husky install",
     "release": "turbo build && changeset version && changeset publish"
   },

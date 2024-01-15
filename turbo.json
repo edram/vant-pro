@@ -4,6 +4,10 @@
     "build": {
       "outputs": ["dist/**"]
     },
-    "dev": {}
+    "dev": {},
+    "docs:build": {
+      "dependsOn": ["build"],
+      "cache": false
+    }
   }
 }
