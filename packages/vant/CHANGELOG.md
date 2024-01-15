@@ -1,5 +1,11 @@
 # @edram/vant-pro
 
+## 3.0.2
+
+### Patch Changes
+
+- [`85e1c64`](https://github.com/edram/vant-pro/commit/85e1c64933371ba389fdd4196379060e43b1a5b6) Thanks [@edram](https://github.com/edram)! - 增加 typescript dts 文件
+
 ## 3.0.1
 
 ### Patch Changes
