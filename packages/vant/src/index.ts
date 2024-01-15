@@ -1,3 +1,3 @@
-import SkuActions from './sku/components/SkuActions';
+import Sku from './sku';
 
-export default SkuActions;
+export default Sku
