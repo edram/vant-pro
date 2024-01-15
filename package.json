@@ -10,7 +10,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "docs:build": "pnpm --dir docs docs:build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "turbo build && changeset version && changeset publish"
   },
   "prettier": "@edram/prettier",
   "devDependencies": {

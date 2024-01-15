@@ -8,6 +8,9 @@
   "sideEffects": false,
   "main": "dist/vant-pro.js",
   "module": "dist/vant-pro.es.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "pnpm clean && rollup -c",
     "clean": "rimraf dist",
