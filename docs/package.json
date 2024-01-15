@@ -13,7 +13,7 @@
   "dependencies": {
     "@edram/vant-pro": "workspace:^",
     "@vant/assets": "^1.0.8",
-    "vant": "^3.6.12"
+    "vant": "^4.8.2"
   },
   "devDependencies": {
     "@edram/tsconfig": "^0.0.7",

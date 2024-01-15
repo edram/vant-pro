@@ -1,6 +1,6 @@
 {
   "name": "@edram/vant-pro",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -39,6 +39,6 @@
     "vue": "^3.4.4"
   },
   "peerDependencies": {
-    "vant": "^3.0.0"
+    "vant": "^4.0.0"
   }
 }

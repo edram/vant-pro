@@ -42,8 +42,8 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8
       vant:
-        specifier: ^3.6.12
-        version: 3.6.12(vue@3.4.3)
+        specifier: ^4.8.2
+        version: 4.8.2(vue@3.4.3)
       vue:
         specifier: ^3.4.3
         version: 3.4.3(typescript@5.3.3)
@@ -73,8 +73,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       vant:
-        specifier: ^3.0.0
-        version: 3.6.12(vue@3.4.4)
+        specifier: ^4.0.0
+        version: 4.8.2(vue@3.4.4)
     devDependencies:
       '@babel/preset-typescript':
         specifier: ^7.23.3
@@ -1402,10 +1402,6 @@ packages:
 
   /@vant/assets@1.0.8:
     resolution: {integrity: sha512-+tH6o83fNqXQWRjGTVxBYdz6a62U9dk1R2WH6huFRK+Wl96ssGPvz9DYU/w/4DZ7lneM6k7u71gzJ2R74yu1Ig==}
-    dev: false
-
-  /@vant/icons@1.8.0:
-    resolution: {integrity: sha512-sKfEUo2/CkQFuERxvkuF6mGQZDKu3IQdj5rV9Fm0weJXtchDSSQ+zt8qPCNUEhh9Y8shy5PzxbvAfOOkCwlCXg==}
     dev: false
 
   /@vant/popperjs@1.3.0:
@@ -4763,25 +4759,25 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vant@3.6.12(vue@3.4.3):
-    resolution: {integrity: sha512-fLzwhpV0ZPQqxrTx6RU8mJVUqP7DSkpdXNeByKubp+O9vKYGcWRX9wFdEwApyy7qLZLLu+rU1Jw52d6lktPL4w==}
+  /vant@4.8.2(vue@3.4.3):
+    resolution: {integrity: sha512-jNxpdABi8B05jxXqKChoaQYgb4fYdab8XlCBBOp85Gt75au+Fixe+oTmjCoRN75NWYiVJF8Bah7CrnFyMMpR6Q==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      '@vant/icons': 1.8.0
       '@vant/popperjs': 1.3.0
       '@vant/use': 1.6.0(vue@3.4.3)
+      '@vue/shared': 3.4.4
       vue: 3.4.3(typescript@5.3.3)
     dev: false
 
-  /vant@3.6.12(vue@3.4.4):
-    resolution: {integrity: sha512-fLzwhpV0ZPQqxrTx6RU8mJVUqP7DSkpdXNeByKubp+O9vKYGcWRX9wFdEwApyy7qLZLLu+rU1Jw52d6lktPL4w==}
+  /vant@4.8.2(vue@3.4.4):
+    resolution: {integrity: sha512-jNxpdABi8B05jxXqKChoaQYgb4fYdab8XlCBBOp85Gt75au+Fixe+oTmjCoRN75NWYiVJF8Bah7CrnFyMMpR6Q==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      '@vant/icons': 1.8.0
       '@vant/popperjs': 1.3.0
       '@vant/use': 1.6.0(vue@3.4.4)
+      '@vue/shared': 3.4.4
       vue: 3.4.4(typescript@5.3.3)
     dev: false
 
