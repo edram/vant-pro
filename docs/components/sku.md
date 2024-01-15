@@ -17,9 +17,6 @@ const { site, theme, page, frontmatter } = useData()
 
 ## Results
 
-### Theme Data
-
-<VanButton>button</VanButton>
 <Sku />
 
 ## More

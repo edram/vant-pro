@@ -11,7 +11,6 @@
       :hide-stock="skuData.sku.hide_stock"
       :message-config="messageConfig"
       :start-sale-num="skuData.start_sale_num"
-      :custom-sku-validator="customSkuValidator"
       disable-stepper-input
       reset-stepper-on-hide
       safe-area-inset-bottom
@@ -19,70 +18,33 @@
       @buy-clicked="onBuyClicked"
       @add-cart="onAddCartClicked"
     />
-    <van-button block type="primary" @click="showBase = true"> 12 </van-button>
+    <van-button block type="primary" @click="showBase = true">基础用法</van-button>
   </div>
 </template>
 
-<script>
-/* eslint-disable no-unused-vars */
-import { initialSku, getSkuData } from './data';
+<script setup>
 import { Sku } from '@edram/vant-pro';
+import { getSkuData } from './data';
+import { ref } from 'vue';
+import { Toast } from 'vant';
 
-export default {
-  components: {
-    Sku: Sku,
+const skuData = getSkuData();
+const showBase = ref(false);
+const messageConfig = {
+  initialMessages: {
+    留言1: '商品留言',
   },
-  data() {
-    this.skuData = getSkuData();
-    this.skuData2 = getSkuData(true);
-    this.initialSku = initialSku;
+  uploadImg: (file, img) =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve(img), 1000);
+    }),
+  uploadMaxSize: 3,
+};
 
-    return {
-      showBase: false,
-      showCustom: false,
-      showStepper: false,
-      showSoldout: false,
-      showLargePicturePreview: false,
-      customSkuValidator: () => '请选择xxx',
-      customStepperConfig: {
-        quotaText: '单次限购100件',
-        stockFormatter: (stock) => `剩余${stock}`,
-        handleOverLimit: (data) => {
-          const { action, limitType, quota, startSaleNum = 1 } = data;
-
-          if (action === 'minus') {
-            this.$toast(
-              startSaleNum > 1 ? `${startSaleNum}件起售` : '至少选择一件商品',
-            );
-          } else if (action === 'plus') {
-          }
-        },
-      },
-      messageConfig: {
-        initialMessages: {
-          留言1: '商品留言',
-        },
-        uploadImg: (file, img) =>
-          new Promise((resolve) => {
-            setTimeout(() => resolve(img), 1000);
-          }),
-        uploadMaxSize: 3,
-      },
-    };
-  },
-
-  methods: {
-    onBuyClicked(data) {
-      this.$toast('buy:' + JSON.stringify(data));
-    },
-
-    onAddCartClicked(data) {
-      this.$toast('add cart:' + JSON.stringify(data));
-    },
-
-    onPointClicked() {
-      this.$toast('积分兑换');
-    },
-  },
+const onBuyClicked = (data) => {
+  Toast('buy:' + JSON.stringify(data));
+};
+const onAddCartClicked = (data) => {
+  Toast('buy:' + JSON.stringify(data));
 };
 </script>
