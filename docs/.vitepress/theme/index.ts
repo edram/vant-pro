@@ -5,6 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 import vant from 'vant';
 import './style.css'
 import 'vant/lib/index.css';
+import '@edram/vant-pro/dist/vant-pro.css'
 
 export default {
   extends: DefaultTheme,
