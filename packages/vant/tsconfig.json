@@ -1,8 +1,10 @@
 {
   "extends": "@edram/tsconfig",
   "compilerOptions": {
-    "rootDir": "./",
-    "jsxImportSource": "vue"
+    "rootDir": "./src",
+    "jsxImportSource": "vue",
+    "outDir": "lib",
+    "emitDeclarationOnly": true
   },
   "include": ["./src/**/*"],
   "exclude": ["dist", "node_modules"]

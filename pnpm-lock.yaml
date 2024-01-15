@@ -29,6 +29,9 @@ importers:
       turbo:
         specifier: ^1.11.3
         version: 1.11.3
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
 
   docs:
     dependencies:
@@ -43,7 +46,7 @@ importers:
         version: 3.6.12(vue@3.4.3)
       vue:
         specifier: ^3.4.3
-        version: 3.4.3
+        version: 3.4.3(typescript@5.3.3)
     devDependencies:
       '@edram/tsconfig':
         specifier: ^0.0.7
@@ -62,7 +65,7 @@ importers:
         version: 5.0.10(@types/node@20.10.6)
       vitepress:
         specifier: 1.0.0-rc.34
-        version: 1.0.0-rc.34(@algolia/client-search@4.22.0)(@types/node@20.10.6)(search-insights@2.13.0)
+        version: 1.0.0-rc.34(@algolia/client-search@4.22.0)(@types/node@20.10.6)(search-insights@2.13.0)(typescript@5.3.3)
 
   packages/vant:
     dependencies:
@@ -111,7 +114,7 @@ importers:
         version: 2.6.2
       vue:
         specifier: ^3.4.4
-        version: 3.4.4
+        version: 3.4.4(typescript@5.3.3)
 
 packages:
 
@@ -1414,7 +1417,7 @@ packages:
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
     dev: false
 
   /@vant/use@1.6.0(vue@3.4.4):
@@ -1422,7 +1425,7 @@ packages:
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      vue: 3.4.4
+      vue: 3.4.4(typescript@5.3.3)
     dev: false
 
   /@vitejs/plugin-vue@5.0.2(vite@5.0.10)(vue@3.4.3):
@@ -1433,7 +1436,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 5.0.10(@types/node@20.10.6)
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
     dev: true
 
   /@vue/babel-helper-vue-transform-on@1.1.5:
@@ -1574,7 +1577,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.4.3
       '@vue/shared': 3.4.3
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
 
   /@vue/server-renderer@3.4.4(vue@3.4.4):
     resolution: {integrity: sha512-+AjoiKcC41k7SMJBYkDO9xs79/Of8DiThS9mH5l2MK+EY0to3psI0k+sElvVqQvsoZTjHMEuMz0AEgvm2T+CwA==}
@@ -1583,7 +1586,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.4.4
       '@vue/shared': 3.4.4
-      vue: 3.4.4
+      vue: 3.4.4(typescript@5.3.3)
 
   /@vue/shared@3.4.3:
     resolution: {integrity: sha512-rIwlkkP1n4uKrRzivAKPZIEkHiuwY5mmhMJ2nZKCBLz8lTUlE73rQh4n1OnnMurXt1vcUNyH4ZPfdh8QweTjpQ==}
@@ -4677,6 +4680,11 @@ packages:
       is-typed-array: 1.1.12
     dev: true
 
+  /typescript@5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
     dependencies:
@@ -4718,7 +4726,7 @@ packages:
       minimatch: 9.0.3
       resolve: 1.22.8
       unplugin: 1.6.0
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -4763,7 +4771,7 @@ packages:
       '@vant/icons': 1.8.0
       '@vant/popperjs': 1.3.0
       '@vant/use': 1.6.0(vue@3.4.3)
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
     dev: false
 
   /vant@3.6.12(vue@3.4.4):
@@ -4774,7 +4782,7 @@ packages:
       '@vant/icons': 1.8.0
       '@vant/popperjs': 1.3.0
       '@vant/use': 1.6.0(vue@3.4.4)
-      vue: 3.4.4
+      vue: 3.4.4(typescript@5.3.3)
     dev: false
 
   /vite@5.0.10(@types/node@20.10.6):
@@ -4813,7 +4821,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.0-rc.34(@algolia/client-search@4.22.0)(@types/node@20.10.6)(search-insights@2.13.0):
+  /vitepress@1.0.0-rc.34(@algolia/client-search@4.22.0)(@types/node@20.10.6)(search-insights@2.13.0)(typescript@5.3.3):
     resolution: {integrity: sha512-TUbTiSdAZFni2XlHlpx61KikgkQ5uG4Wtmw2R0SXhIOG6qGqzDJczAFjkMc4i45I9c3KyatwOYe8oEfCnzVYwQ==}
     hasBin: true
     peerDependencies:
@@ -4840,7 +4848,7 @@ packages:
       shikiji-core: 0.9.17
       shikiji-transformers: 0.9.17
       vite: 5.0.10(@types/node@20.10.6)
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/node'
@@ -4881,10 +4889,10 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 3.4.3
+      vue: 3.4.3(typescript@5.3.3)
     dev: true
 
-  /vue@3.4.3:
+  /vue@3.4.3(typescript@5.3.3):
     resolution: {integrity: sha512-GjN+culMAGv/mUbkIv8zMKItno8npcj5gWlXkSxf1SPTQf8eJ4A+YfHIvQFyL1IfuJcMl3soA7SmN1fRxbf/wA==}
     peerDependencies:
       typescript: '*'
@@ -4897,8 +4905,9 @@ packages:
       '@vue/runtime-dom': 3.4.3
       '@vue/server-renderer': 3.4.3(vue@3.4.3)
       '@vue/shared': 3.4.3
+      typescript: 5.3.3
 
-  /vue@3.4.4:
+  /vue@3.4.4(typescript@5.3.3):
     resolution: {integrity: sha512-suZXgDVT8lRNhKmxdkwOsR0oyUi8is7mtqI18qW97JLoyorEbE9B2Sb4Ws/mR/+0AgA/JUtsv1ytlRSH3/pDIA==}
     peerDependencies:
       typescript: '*'
@@ -4911,6 +4920,7 @@ packages:
       '@vue/runtime-dom': 3.4.4
       '@vue/server-renderer': 3.4.4(vue@3.4.4)
       '@vue/shared': 3.4.4
+      typescript: 5.3.3
 
   /wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}

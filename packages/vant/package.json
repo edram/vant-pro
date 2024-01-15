@@ -8,12 +8,16 @@
   "sideEffects": false,
   "main": "dist/vant-pro.js",
   "module": "dist/vant-pro.es.js",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "lib/"
   ],
   "scripts": {
-    "build": "pnpm clean && rollup -c",
-    "clean": "rimraf dist",
+    "build": "pnpm clean && pnpm run build:dist && pnpm run build:types",
+    "build:dist": "rollup -c",
+    "build:types": "tsc",
+    "clean": "rimraf dist lib",
     "dev": "pnpm clean && rollup -c --watch"
   },
   "dependencies": {
