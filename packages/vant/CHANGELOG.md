@@ -1,5 +1,13 @@
 # @edram/vant-pro
 
+## 4.0.2
+
+### Patch Changes
+
+- [`5f85574`](https://github.com/edram/vant-pro/commit/5f85574b05780c1c5109b87362c6da828c92babd) Thanks [@edram](https://github.com/edram)! - Toast 迁移至 showToast
+
+- [`6e5cc96`](https://github.com/edram/vant-pro/commit/6e5cc96ab6b3835cbac655cd84f460d8591ebec6) Thanks [@edram](https://github.com/edram)! - ImagePreview 迁移至 showImagePreview
+
 ## 4.0.1
 
 ### Patch Changes
