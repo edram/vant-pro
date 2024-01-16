@@ -2,28 +2,17 @@ import { defineComponent, PropType } from 'vue';
 import { createNamespace } from 'vant/es/utils';
 const [name, bem] = createNamespace('sku-datetime-field');
 
-import { stringToDate, dateToString } from '../utils/time-helper';
-
 // Components
 import Popup from 'vant/es/popup';
-import DateTimePicker from 'vant/es/datetime-picker';
+import type { PickerConfirmEventParams } from 'vant';
+import TimePicker from 'vant/es/time-picker';
+import DatePicker from 'vant/es/date-picker';
 import Field from 'vant/es/field';
-
-const format = {
-  year: '年',
-  month: '月',
-  day: '日',
-  hour: '时',
-  minute: '分',
-};
 
 const title = {
   date: '选择年月日',
   time: '选择时间',
-  datetime: '选择日期时间',
 };
-
-type FormatType = 'year' | 'month' | 'day' | 'hour' | 'minute';
 
 export default defineComponent({
   name,
@@ -34,16 +23,24 @@ export default defineComponent({
     required: Boolean,
     placeholder: String,
     type: {
-      type: String as PropType<'date' | 'time' | 'datetime'>,
+      type: String as PropType<'date' | 'time'>,
       default: 'date',
     },
   },
 
   data() {
+    const now = new Date();
+
     return {
       showDatePicker: false,
-      currentDate: this.type === 'time' ? '' : new Date(),
-      minDate: new Date(new Date().getFullYear() - 60, 0, 1),
+      currentDate:
+        this.type === 'time'
+          ? [`${now.getHours()}`, `${now.getMinutes()}`]
+          : [
+              `${now.getFullYear()}`,
+              `${now.getMonth() + 1}`,
+              `${now.getDate()}`,
+            ],
     };
   },
 
@@ -51,11 +48,10 @@ export default defineComponent({
     value(val) {
       switch (this.type) {
         case 'time':
-          this.currentDate = val;
+          this.currentDate = val.split(':');
           break;
         case 'date':
-        case 'datetime':
-          this.currentDate = stringToDate(val) || new Date();
+          this.currentDate = val.split('-');
           break;
       }
     },
@@ -71,20 +67,18 @@ export default defineComponent({
     onClick() {
       this.showDatePicker = true;
     },
-    onConfirm(val: Date | string) {
-      let data = val;
-      if (this.type !== 'time') {
-        data = dateToString(val, this.type) as string;
-      }
-      this.$emit('update:modelValue', data);
+    onConfirm({ selectedValues }: PickerConfirmEventParams) {
+      this.$emit(
+        'update:modelValue',
+        this.type == 'time'
+          ? selectedValues.join(':')
+          : selectedValues.join('-'),
+      );
       this.showDatePicker = false;
     },
+
     onCancel() {
       this.showDatePicker = false;
-    },
-    formatter(type: FormatType, val: string): string {
-      const word = format[type];
-      return `${val}${word}`;
     },
   },
 
@@ -100,24 +94,42 @@ export default defineComponent({
         placeholder={this.placeholder}
         onClick={this.onClick}
         v-slots={{
-          extra: () => (
-            <Popup
-              v-model={[this.showDatePicker, 'show']}
-              round
-              position="bottom"
-              teleport="body"
-            >
-              <DateTimePicker
-                type={this.type}
-                title={this.title}
-                value={this.currentDate}
-                minDate={this.minDate}
-                formatter={this.formatter}
-                onCancel={this.onCancel}
-                onConfirm={this.onConfirm}
-              />
-            </Popup>
-          ),
+          extra: () => {
+            console.log(this.currentDate, this.type);
+            let pick: JSX.Element | null = null;
+
+            if (this.type == 'date') {
+              pick = (
+                <DatePicker
+                  title={this.title}
+                  modelValue={this.currentDate}
+                  onCancel={this.onCancel}
+                  onConfirm={this.onConfirm}
+                />
+              );
+            } else {
+              console.log(this.currentDate);
+              pick = (
+                <TimePicker
+                  modelValue={this.currentDate}
+                  title={this.title}
+                  onCancel={this.onCancel}
+                  onConfirm={this.onConfirm}
+                />
+              );
+            }
+
+            return (
+              <Popup
+                v-model={[this.showDatePicker, 'show']}
+                round
+                position="bottom"
+                teleport="body"
+              >
+                {pick}
+              </Popup>
+            );
+          },
         }}
       ></Field>
     );

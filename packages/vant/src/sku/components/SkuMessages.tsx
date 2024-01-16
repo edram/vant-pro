@@ -1,7 +1,7 @@
 import { defineComponent, PropType } from 'vue';
 import { createNamespace } from 'vant/es/utils';
 
-import { isNumeric } from 'vant/es/utils/validate';
+import { isNumeric } from 'vant/es/utils/basic';
 import { isEmail } from '../utils/validate';
 
 // Components
