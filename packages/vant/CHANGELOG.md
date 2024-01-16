@@ -1,5 +1,13 @@
 # @edram/vant-pro
 
+## 4.0.1
+
+### Patch Changes
+
+- [`d538d52`](https://github.com/edram/vant-pro/commit/d538d5235fcb55cbff1db8ef422cdc65f477123a) Thanks [@edram](https://github.com/edram)! - 根据 vant4 从 less 变量到 css 变量
+
+- [`f654a6d`](https://github.com/edram/vant-pro/commit/f654a6df5965b77406054ca695415c011e54bd0b) Thanks [@edram](https://github.com/edram)! - 修复 vant4 isNumeric 和 DateTimePicker 组件
+
 ## 3.0.2
 
 ### Patch Changes
