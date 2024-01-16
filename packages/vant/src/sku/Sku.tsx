@@ -3,7 +3,7 @@ import { TinyEmitter } from 'tiny-emitter';
 import { createNamespace } from 'vant/es/utils';
 import Popup from 'vant/es/popup';
 import { showToast } from 'vant/es/toast';
-import ImagePreview from 'vant/es/image-preview';
+import { showImagePreview } from 'vant/es/image-preview';
 import { isEmpty } from './utils';
 
 import {
@@ -518,7 +518,7 @@ export default defineComponent({
         return;
       }
 
-      ImagePreview({
+      showImagePreview({
         images: this.imageList,
         startPosition: index,
         onClose: () => {
