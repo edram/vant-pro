@@ -4,7 +4,7 @@ name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [3.x, 4.x]
+    branches: [3.x, main]
 
   # 允许您从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
