@@ -1,5 +1,17 @@
-@import './var';
-@import 'vant/lib/style/mixins/clearfix';
+@import '../style/mixins/clearfix';
+
+:root,
+:host {
+  --van-sku-item-background-color: var(--van-background);
+
+  --van-field-label-width: 6.2em;
+  --van-field-label-color: var(--van-gray-7);
+  --van-field-label-margin-right: var(--van-padding-sm);
+
+  --van-cell-label-color: var(--van-gray-6);
+  --van-cell-label-font-size: var(--van-font-size-sm);
+  --van-cell-label-line-height: var(--van-line-height-sm);
+}
 
 .van-sku {
   &-container {
@@ -9,8 +21,8 @@
     min-height: 50%;
     max-height: 80%;
     overflow-y: visible;
-    font-size: @font-size-md;
-    background: @white;
+    font-size: var(--van-font-size-md);
+    background: var(--van-white);
   }
 
   &-body {
@@ -27,39 +39,39 @@
   &-header {
     display: flex;
     flex-shrink: 0;
-    margin: 0 @padding-md;
+    margin: 0 var(--van-padding-md);
 
     &__img-wrap {
       flex-shrink: 0;
       width: 96px;
       height: 96px;
-      margin: @padding-sm @padding-sm @padding-sm 0;
+      margin: var(--van-padding-sm) var(--van-padding-sm) var(--van-padding-sm) 0;
       overflow: hidden;
-      border-radius: @border-radius-md;
+      border-radius: var(--van-radius-md);
     }
 
     &__goods-info {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: @padding-sm 20px @padding-sm 0;
+      padding: var(--van-padding-sm) 20px var(--van-padding-sm) 0;
     }
   }
 
   &-header-item {
-    margin-top: @padding-xs;
-    color: @gray-6;
-    font-size: @font-size-sm;
+    margin-top: var(--van-padding-xs);
+    color: var(--van-gray-6);
+    font-size: var(--van-font-size-sm);
     line-height: 16px;
   }
 
   &__price-symbol {
-    font-size: @font-size-lg;
+    font-size: var(--van-font-size-lg);
     vertical-align: bottom;
   }
 
   &__price-num {
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-bold);
     font-size: 22px;
     vertical-align: bottom;
     word-wrap: break-word;
@@ -68,17 +80,17 @@
   &__goods-price {
     // for price align
     margin-left: -2px;
-    color: @red;
+    color: var(--van-red);
   }
 
   &__price-tag {
     position: relative;
     display: inline-block;
-    margin-left: @padding-xs;
+    margin-left: var(--van-padding-xs);
     padding: 0 5px;
     overflow: hidden;
-    color: @red;
-    font-size: @font-size-sm;
+    color: var(--van-red);
+    font-size: var(--van-font-size-sm);
     line-height: 16px;
     border-radius: 8px;
 
@@ -95,7 +107,7 @@
   }
 
   &-group-container {
-    padding-top: @padding-sm;
+    padding-top: var(--van-padding-sm);
 
     &--hide-soldout {
       .van-sku-row__item--disabled {
@@ -106,7 +118,7 @@
 
   /* sku row */
   &-row {
-    margin: 0 @padding-md @padding-sm;
+    margin: 0 var(--van-padding-md) var(--van-padding-sm);
 
     &:last-child {
       margin-bottom: 0;
@@ -116,8 +128,8 @@
     &__image-item {
       position: relative;
       overflow: hidden;
-      color: @text-color;
-      border-radius: @border-radius-md;
+      color: var(--van-text-color);
+      border-radius: var(--van-radius-md);
       cursor: pointer;
 
       &::before {
@@ -126,12 +138,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: @sku-item-background-color;
+        background: var(--van-sku-item-background-color);
         content: '';
       }
 
       &--active {
-        color: @red;
+        color: var(--van-red);
 
         &::before {
           background: currentColor;
@@ -145,7 +157,7 @@
       align-items: center;
       justify-content: center;
       min-width: 40px;
-      margin: 0 @padding-sm @padding-sm 0;
+      margin: 0 var(--van-padding-sm) var(--van-padding-sm) 0;
       font-size: 13px;
       line-height: 16px;
       vertical-align: middle;
@@ -156,17 +168,17 @@
         height: 24px;
         margin: 4px 0 4px 4px;
         object-fit: cover;
-        border-radius: @border-radius-sm;
+        border-radius: var(--van-radius-sm);
       }
 
       &-name {
         z-index: 1;
-        padding: @padding-xs;
+        padding: var(--van-padding-xs);
       }
 
       &--disabled {
-        color: @gray-5;
-        background: @active-color;
+        color: var(--van-gray-5);
+        background: var(--van-active-color);
         cursor: not-allowed;
 
         .van-sku-row__item-img {
@@ -204,7 +216,7 @@
             line-height: 18px;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.4);
-            border-bottom-left-radius: @border-radius-md;
+            border-bottom-left-radius: var(--van-radius-md);
           }
         }
 
@@ -215,7 +227,7 @@
           justify-content: center;
           box-sizing: border-box;
           height: 40px;
-          padding: @padding-base;
+          padding: var(--van-padding-base);
           font-size: 12px;
           line-height: 16px;
 
@@ -229,12 +241,12 @@
         }
 
         &--disabled {
-          color: @gray-5;
+          color: var(--van-gray-5);
           cursor: not-allowed;
 
           &::before {
             z-index: 2;
-            background: @active-color;
+            background: var(--van-active-color);
             opacity: 0.4;
           }
         }
@@ -242,15 +254,15 @@
     }
 
     &__title {
-      padding-bottom: @padding-sm;
+      padding-bottom: var(--van-padding-sm);
     }
 
     &__title-multiple {
-      color: @gray-6;
+      color: var(--van-gray-6);
     }
 
     &__scroller {
-      margin: 0 -@padding-md;
+      margin: 0 -var(--van-padding-md);
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
@@ -263,13 +275,13 @@
     &__row {
       display: inline-flex;
       margin-bottom: 4px;
-      padding: 0 @padding-md;
+      padding: 0 var(--van-padding-md);
     }
 
     &__indicator {
       width: 40px;
       height: 4px;
-      background: @gray-3;
+      background: var(--van-gray-3);
       border-radius: 2px;
 
       &-wrapper {
@@ -281,21 +293,21 @@
       &-slider {
         width: 50%;
         height: 100%;
-        background-color: @red;
+        background-color: var(--van-red);
         border-radius: 2px;
       }
     }
   }
 
   &-stepper-stock {
-    padding: @padding-sm @padding-md;
+    padding: var(--van-padding-sm) var(--van-padding-md);
     overflow: hidden;
     line-height: 30px;
   }
 
   &__stepper {
     float: right;
-    padding-left: @padding-base;
+    padding-left: var(--van-padding-base);
 
     &-title {
       float: left;
@@ -303,30 +315,30 @@
 
     &-quota {
       float: right;
-      color: @red;
-      font-size: @font-size-sm;
+      color: var(--van-red);
+      font-size: var(--van-font-size-sm);
     }
   }
 
   &__stock {
     display: inline-block;
-    margin-right: @padding-xs;
-    color: @gray-6;
-    font-size: @font-size-sm;
+    margin-right: var(--van-padding-xs);
+    color: var(--van-gray-6);
+    font-size: var(--van-font-size-sm);
 
     &-num--highlight {
-      color: @red;
+      color: var(--van-red);
     }
   }
 
   &-messages {
-    padding-bottom: @padding-xl;
+    padding-bottom: var(--van-padding-xl);
 
     &__image-cell {
       .van-cell__title {
-        max-width: @field-label-width;
-        margin-right: @field-label-margin-right;
-        color: @field-label-color;
+        max-width: var(--van-field-label-width);
+        margin-right: var(--van-field-label-margin-right);
+        color: var(--van-field-label-color);
         text-align: left;
         word-wrap: break-word;
       }
@@ -337,9 +349,9 @@
       }
 
       &-label {
-        color: @cell-label-color;
-        font-size: @cell-label-font-size;
-        line-height: @cell-label-line-height;
+        color: var(--van-cell-label-color);
+        font-size: var(--van-cell-label-font-size);
+        line-height: var(--van-cell-label-line-height);
       }
     }
   }
@@ -347,12 +359,12 @@
   &-actions {
     display: flex;
     flex-shrink: 0;
-    padding: @padding-xs @padding-md;
+    padding: var(--van-padding-xs) var(--van-padding-md);
 
     .van-button {
       height: 40px;
-      font-weight: @font-weight-bold;
-      font-size: @font-size-md;
+      font-weight: var(--van-font-bold);
+      font-size: var(--van-font-size-md);
       border: none;
       border-radius: 0;
 
@@ -367,11 +379,11 @@
       }
 
       &--warning {
-        background: @gradient-orange;
+        background: var(--van-gradient-orange);
       }
 
       &--danger {
-        background: @gradient-red;
+        background: var(--van-gradient-red);
       }
     }
   }
