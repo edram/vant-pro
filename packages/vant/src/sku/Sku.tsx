@@ -2,7 +2,7 @@ import { defineComponent, PropType } from 'vue';
 import { TinyEmitter } from 'tiny-emitter';
 import { createNamespace } from 'vant/es/utils';
 import Popup from 'vant/es/popup';
-import Toast from 'vant/es/toast';
+import { showToast } from 'vant/es/toast';
 import ImagePreview from 'vant/es/image-preview';
 import { isEmpty } from './utils';
 
@@ -538,19 +538,19 @@ export default defineComponent({
 
       if (action === 'minus') {
         if (this.startSaleNum > 1) {
-          Toast(`${this.startSaleNum}件起售`);
+          showToast(`${this.startSaleNum}件起售`);
         } else {
-          Toast('至少选择一件');
+          showToast('至少选择一件');
         }
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
           if (quotaUsed > 0) {
-            Toast(`每人限购${quota}件，你已购买${quotaUsed}件`);
+            showToast(`每人限购${quota}件，你已购买${quotaUsed}件`);
           } else {
-            Toast(`每人限购${quota}件`);
+            showToast(`每人限购${quota}件`);
           }
         } else {
-          Toast('库存不足');
+          showToast('库存不足');
         }
       }
     },
@@ -581,7 +581,7 @@ export default defineComponent({
       const error = this.validateSku();
 
       if (error) {
-        Toast(error);
+        showToast(error);
       } else {
         this.$emit(type, this.getSkuData());
       }
