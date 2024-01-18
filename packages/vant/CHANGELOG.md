@@ -1,5 +1,11 @@
 # @edram/vant-pro
 
+## 4.0.4
+
+### Patch Changes
+
+- [`3a6722f`](https://github.com/edram/vant-pro/commit/3a6722fc86223273e9ef9e27277bd7c07caeea2c) Thanks [@edram](https://github.com/edram)! - rollup 增加 types
+
 ## 4.0.3
 
 ### Patch Changes
