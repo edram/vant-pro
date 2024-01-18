@@ -1,5 +1,11 @@
 # @edram/vant-pro
 
+## 4.0.3
+
+### Patch Changes
+
+- [`d224da2`](https://github.com/edram/vant-pro/commit/d224da279cec19f5540d2417e97d1ac5e343b4ef) Thanks [@edram](https://github.com/edram)! - 修复 Stepper v-model 绑定错误的 bug
+
 ## 4.0.2
 
 ### Patch Changes
