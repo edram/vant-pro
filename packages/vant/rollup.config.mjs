@@ -3,6 +3,7 @@ import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
+import { dts } from 'rollup-plugin-dts';
 
 /** @type {import("rollup").RollupOptions} */
 const config = {
@@ -63,4 +64,17 @@ const less = {
   plugins: [postcss({ extract: true })],
 };
 
-export default [config, less];
+const types = {
+  input: 'src/index.ts',
+  output: [{ file: 'dist/vant-pro.d.ts', format: 'es' }],
+  plugins: [
+    dts({
+      compilerOptions: {
+        preserveSymlinks: false,
+      },
+      tsconfig: './tsconfig.build.json',
+    }),
+  ],
+};
+
+export default [config, less, types];

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "noImplicitAny": false,
-    "jsxImportSource": "vue"
+    "jsxImportSource": "vue",
+    "strictNullChecks": false
   },
   "include": ["./src/**/*"],
   "exclude": ["dist", "node_modules"]

@@ -747,6 +747,7 @@ export default defineComponent({
         disableStepperInput={this.disableStepperInput}
         customStepperConfig={this.customStepperConfig}
         hideQuotaText={this.hideQuotaText}
+        // @ts-ignore
         onChange={(event) => {
           this.$emit('stepper-change', event);
         }}

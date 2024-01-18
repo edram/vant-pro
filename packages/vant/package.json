@@ -8,15 +8,14 @@
   "sideEffects": false,
   "main": "dist/vant-pro.js",
   "module": "dist/vant-pro.es.js",
-  "types": "lib/index.d.ts",
+  "types": "dist/vant-pro.d.ts",
   "files": [
     "dist/",
     "lib/"
   ],
   "scripts": {
-    "build": "pnpm clean && pnpm run build:dist && pnpm run build:types",
+    "build": "pnpm clean && pnpm run build:dist",
     "build:dist": "rollup -c",
-    "build:types": "tsc -p tsconfig.build.json || exit 0",
     "clean": "rimraf dist lib",
     "dev": "pnpm clean && rollup -c --watch"
   },
@@ -34,6 +33,7 @@
     "less": "^4.2.0",
     "rimraf": "^5.0.5",
     "rollup": "^4.9.2",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.2",
     "vue": "^3.4.4"
