@@ -163,7 +163,7 @@ export default defineComponent({
           {this.stepperTitle || '购买数量'}
         </div>
         <Stepper
-          v-model={[this.currentNum, 'show']}
+          v-model={this.currentNum}
           integer
           class="van-sku__stepper"
           min={this.stepperMinLimit}
