@@ -15,6 +15,7 @@
       reset-stepper-on-hide
       safe-area-inset-bottom
       reset-selected-sku-on-hide
+      :initial-sku="initialSku"
       @buy-clicked="onBuyClicked"
       @add-cart="onAddCartClicked"
     />
@@ -24,9 +25,9 @@
 
 <script setup>
 import { Sku } from '@edram/vant-pro';
-import { getSkuData } from './data';
+import { getSkuData, initialSku } from './data';
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 const skuData = getSkuData();
 const showBase = ref(false);
@@ -42,9 +43,9 @@ const messageConfig = {
 };
 
 const onBuyClicked = (data) => {
-  Toast('buy:' + JSON.stringify(data));
+  showToast('buy:' + JSON.stringify(data));
 };
 const onAddCartClicked = (data) => {
-  Toast('buy:' + JSON.stringify(data));
+  showToast('buy:' + JSON.stringify(data));
 };
 </script>
