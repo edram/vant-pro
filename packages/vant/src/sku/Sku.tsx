@@ -341,7 +341,7 @@ export default defineComponent({
       this.stepperError = null;
 
       if (skuStepper) {
-        // skuStepper.setCurrentNum(num);
+        (skuStepper as any).setCurrentNum(num);
       } else {
         // 当首次加载（skuStepper 为空）时，传入数量如果不合法，可能会存在问题
         this.selectedNum = num;
