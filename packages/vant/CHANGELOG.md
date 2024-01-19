@@ -1,5 +1,11 @@
 # @edram/vant-pro
 
+## 4.0.6
+
+### Patch Changes
+
+- [`6f555c1`](https://github.com/edram/vant-pro/commit/6f555c1af6f802ec91acde35b0f19d5b3fac1d68) Thanks [@edram](https://github.com/edram)! - 修复未调用 skuStepper 的 setCurrentNum 方法
+
 ## 4.0.5
 
 ### Patch Changes
