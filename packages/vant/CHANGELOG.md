@@ -1,5 +1,11 @@
 # @edram/vant-pro
 
+## 4.0.7
+
+### Patch Changes
+
+- [`460609c`](https://github.com/edram/vant-pro/commit/460609cd774e91e5897d985e5bd0934c8f8f1d68) Thanks [@edram](https://github.com/edram)! - 适配 vue3 v-model 改为 modelValue 属性和 update:modelValue 事件
+
 ## 4.0.6
 
 ### Patch Changes
