@@ -126,6 +126,7 @@ export default defineComponent({
     show: boolean;
     skuEventBus: TinyEmitter | undefined;
     stepperError: string | null;
+    skuRows: any[];
   } {
     return {
       selectedSku: {},
@@ -134,7 +135,18 @@ export default defineComponent({
       show: this.value,
       skuEventBus: undefined,
       stepperError: null,
+      skuRows: [],
     };
+  },
+
+  watch: {
+    initialSku: {
+      handler() {
+        this.resetStepper();
+        this.resetSelectedSku();
+      },
+      deep: true,
+    },
   },
 
   computed: {
@@ -604,7 +616,7 @@ export default defineComponent({
     },
 
     centerInitialSku() {
-      ((this.$refs.skuRows as any[]) || []).forEach((it: any) => {
+      this.skuRows.forEach((it: any) => {
         const { k_s } = it.skuRow || {};
         it.centerItem(this.initialSku[k_s]);
       });
@@ -702,7 +714,10 @@ export default defineComponent({
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
           {this.skuTree.map((skuTreeItem) => (
-            <SkuRow skuRow={skuTreeItem} ref="skuRows">
+            <SkuRow
+              skuRow={skuTreeItem}
+              ref={(skuRow) => this.skuRows.push(skuRow)}
+            >
               {skuTreeItem.v.map((skuValue: any) => (
                 <SkuRowItem
                   skuList={skuList}

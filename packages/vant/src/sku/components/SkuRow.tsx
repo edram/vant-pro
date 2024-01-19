@@ -84,6 +84,12 @@ export default defineComponent({
 
       return nodes;
     },
+
+    centerItem(selectSkuId) {
+      if (!this.skuRow.largeImageMode || !selectSkuId) {
+        return;
+      }
+    },
   },
 
   render() {
