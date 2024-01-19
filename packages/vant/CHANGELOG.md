@@ -1,5 +1,13 @@
 # @edram/vant-pro
 
+## 4.0.5
+
+### Patch Changes
+
+- [`72e4da4`](https://github.com/edram/vant-pro/commit/72e4da48cd6e36ac4799c439da07afbe1fdbd452) Thanks [@edram](https://github.com/edram)! - 修复在vue3 ref 挂在多个组件错误的 Bug
+
+- [`67ea232`](https://github.com/edram/vant-pro/commit/67ea232fa2ea22f9f0516f6129e144bc9671038c) Thanks [@edram](https://github.com/edram)! - 删除多余 log
+
 ## 4.0.4
 
 ### Patch Changes
