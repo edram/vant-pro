@@ -163,6 +163,8 @@ export default defineComponent({
       this.show = val;
     },
 
+    skuTree: 'resetSelectedSku',
+
     initialSku: {
       handler() {
         this.resetStepper();
@@ -362,7 +364,7 @@ export default defineComponent({
       return this.skuTree.map((skuTreeItem) => (
         <SkuRow
           skuRow={skuTreeItem}
-          ref={(skuRow) => this.skuRows.push(skuRow)}
+          ref={(skuRow) => skuRow && this.skuRows.push(skuRow)}
         >
           {skuTreeItem.v.map((skuValue: any) => (
             <SkuRowItem
@@ -663,7 +665,6 @@ export default defineComponent({
     },
 
     centerInitialSku() {
-      console.log(this.skuRows);
       this.skuRows.forEach((it: any) => {
         const { k_s } = it.skuRow || {};
         it.centerItem(this.initialSku[k_s]);
