@@ -1,7 +1,7 @@
 <template>
   <div class="sku-container">
     <Sku
-      v-model:show="showBase"
+      v-model="showBase"
       :sku="skuData.sku"
       :quota="skuData.quota"
       :goods="skuData.goods_info"

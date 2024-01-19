@@ -36,7 +36,7 @@ export default defineComponent({
   props: {
     sku: Object as PropType<SkuData>,
     goods: Object,
-    value: Boolean,
+    modelValue: Boolean,
     buyText: String,
     goodsId: [Number, String],
     priceTag: String,
@@ -132,7 +132,7 @@ export default defineComponent({
       selectedSku: {},
       selectedProp: {},
       selectedNum: 1,
-      show: this.value,
+      show: this.modelValue,
       skuEventBus: undefined,
       stepperError: null,
       skuRows: [],
@@ -140,6 +140,29 @@ export default defineComponent({
   },
 
   watch: {
+    show(val) {
+      this.$emit('update:modelValue', val);
+      if (!val) {
+        this.$emit('sku-close', {
+          selectedSkuValues: this.selectedSkuValues,
+          selectedNum: this.selectedNum,
+          selectedSkuComb: this.selectedSkuComb,
+        });
+
+        if (this.resetStepperOnHide) {
+          this.resetStepper();
+        }
+
+        if (this.resetSelectedSkuOnHide) {
+          this.resetSelectedSku();
+        }
+      }
+    },
+
+    modelValue(val) {
+      this.show = val;
+    },
+
     initialSku: {
       handler() {
         this.resetStepper();
@@ -644,6 +667,7 @@ export default defineComponent({
   },
 
   render() {
+    console.log(this);
     if (this.isSkuEmpty) {
       return <></>;
     }
@@ -799,6 +823,7 @@ export default defineComponent({
         safeAreaInsetBottom={this.safeAreaInsetBottom}
         onOpened={() => {}}
       >
+        {this.show ? '是' : '否'}
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>
           {slots['sku-body-top']?.(slotsProps)}
