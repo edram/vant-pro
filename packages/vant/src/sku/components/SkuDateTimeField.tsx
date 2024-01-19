@@ -95,7 +95,6 @@ export default defineComponent({
         onClick={this.onClick}
         v-slots={{
           extra: () => {
-            console.log(this.currentDate, this.type);
             let pick: JSX.Element | null = null;
 
             if (this.type == 'date') {
@@ -108,7 +107,6 @@ export default defineComponent({
                 />
               );
             } else {
-              console.log(this.currentDate);
               pick = (
                 <TimePicker
                   modelValue={this.currentDate}
