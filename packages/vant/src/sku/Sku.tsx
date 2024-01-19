@@ -356,6 +356,30 @@ export default defineComponent({
   },
 
   methods: {
+    generateSkuRows() {
+      this.skuRows = [];
+
+      return this.skuTree.map((skuTreeItem) => (
+        <SkuRow
+          skuRow={skuTreeItem}
+          ref={(skuRow) => this.skuRows.push(skuRow)}
+        >
+          {skuTreeItem.v.map((skuValue: any) => (
+            <SkuRowItem
+              skuList={this.skuList}
+              lazyLoad={this.lazyLoad}
+              skuValue={skuValue}
+              skuKeyStr={skuTreeItem.k_s}
+              selectedSku={this.selectedSku}
+              skuEventBus={this.skuEventBus}
+              disableSoldoutSku={this.disableSoldoutSku}
+              largeImageMode={skuTreeItem.largeImageMode}
+            />
+          ))}
+        </SkuRow>
+      ));
+    },
+
     resetStepper() {
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
@@ -639,6 +663,7 @@ export default defineComponent({
     },
 
     centerInitialSku() {
+      console.log(this.skuRows);
       this.skuRows.forEach((it: any) => {
         const { k_s } = it.skuRow || {};
         it.centerItem(this.initialSku[k_s]);
@@ -667,7 +692,6 @@ export default defineComponent({
   },
 
   render() {
-    console.log(this);
     if (this.isSkuEmpty) {
       return <></>;
     }
@@ -737,25 +761,7 @@ export default defineComponent({
       slots['sku-group']?.(slotsProps) ||
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
-          {this.skuTree.map((skuTreeItem) => (
-            <SkuRow
-              skuRow={skuTreeItem}
-              ref={(skuRow) => this.skuRows.push(skuRow)}
-            >
-              {skuTreeItem.v.map((skuValue: any) => (
-                <SkuRowItem
-                  skuList={skuList}
-                  lazyLoad={lazyLoad}
-                  skuValue={skuValue}
-                  skuKeyStr={skuTreeItem.k_s}
-                  selectedSku={selectedSku}
-                  skuEventBus={skuEventBus}
-                  disableSoldoutSku={disableSoldoutSku}
-                  largeImageMode={skuTreeItem.largeImageMode}
-                />
-              ))}
-            </SkuRow>
-          ))}
+          {this.generateSkuRows()}
           {this.propList.map((skuTreeItem) => (
             <SkuRow skuRow={skuTreeItem}>
               {skuTreeItem.v.map((skuValue: any) => (
@@ -823,7 +829,6 @@ export default defineComponent({
         safeAreaInsetBottom={this.safeAreaInsetBottom}
         onOpened={() => {}}
       >
-        {this.show ? '是' : '否'}
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>
           {slots['sku-body-top']?.(slotsProps)}
