@@ -1,5 +1,13 @@
 # @edram/vant-pro
 
+## 4.0.8
+
+### Patch Changes
+
+- [`3a83823`](https://github.com/edram/vant-pro/commit/3a83823acd0be97b84e9c02382ed3ad10cb8f9fb) Thanks [@edram](https://github.com/edram)! - 修复 sku 数据变动导致的 bug
+
+- [`bc49bd2`](https://github.com/edram/vant-pro/commit/bc49bd25a1c037326f71168494d35c2d2b2e04c8) Thanks [@edram](https://github.com/edram)! - 增加 generateSkuRows 单独生成 skuRow 的方法
+
 ## 4.0.7
 
 ### Patch Changes
